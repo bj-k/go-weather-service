@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: Weather Service API
+  description: A simple API to get weather information for specific locations.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /getWeather:
+    get:
+      summary: Get weather for a location
+      parameters:
+        - in: query
+          name: location
+          schema:
+            type: string
+          required: true
+          description: The location to get the weather for
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  location:
+                    type: string
+                  condition:
+                    type: string
+                  temperature:
+                    type: string
+        '404':
+          description: Location not found
+  /getSupportedLocations:
+    get:
+      summary: Get supported locations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string

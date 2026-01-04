@@ -7,6 +7,7 @@
 *.dll
 *.so
 *.dylib
+/weather-service
 
 # Test binary, built with `go test -c`
 *.test

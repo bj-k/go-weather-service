@@ -1,0 +1,9 @@
+# Ignore the binary in the root
+/weather-service
+/weather-service.exe
+
+# Ignore git directory
+.git
+
+# Ignore VS Code settings
+.vscode
